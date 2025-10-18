@@ -1,6 +1,6 @@
 {
 	"name": "drizzle-crud",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"description": "A reusable base repository/service package for NestJS and Drizzle ORM.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
