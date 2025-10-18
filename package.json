@@ -33,7 +33,7 @@
 	"devDependencies": {
 		"@nestjs/common": "^10.0.0",
 		"@nestjs/config": "^3.0.0",
-		"@nestjs/platform-express": "^5.0.0",
+		"@nestjs/platform-express": "^10.0.0",
 		"@nestjs/testing": "^10.0.0",
 		"@types/jest": "^29.5.12",
 		"@types/node": "^20.12.12",
@@ -43,5 +43,8 @@
 		"pg": "^8.11.3",
 		"ts-jest": "^29.1.4",
 		"typescript": "^5.4.5"
+	},
+	"dependencies": {
+		"class-validator": "^0.14.2"
 	}
 }
