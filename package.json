@@ -1,6 +1,6 @@
 {
 	"name": "viliha-drizzle-crud",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "A reusable base repository/service package for NestJS and Drizzle ORM.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
