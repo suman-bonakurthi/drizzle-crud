@@ -1,5 +1,5 @@
 {
-	"name": "drizzle-crud",
+	"name": "viliha-drizzle-crud",
 	"version": "0.1.5",
 	"description": "A reusable base repository/service package for NestJS and Drizzle ORM.",
 	"main": "dist/index.js",
@@ -22,7 +22,7 @@
 		"repository",
 		"orm"
 	],
-	"author": "Your Name/Organization",
+	"author": "Suman Bonakurthi",
 	"license": "MIT",
 	"peerDependencies": {
 		"@nestjs/common": "^10.0.0",
