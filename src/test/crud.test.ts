@@ -1,8 +1,8 @@
 import { pgTable, serial, text } from "drizzle-orm/pg-core";
 import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
 import { describe, expect, it } from "vitest";
 import { z } from "zod/v4";
-
 import { drizzleCrud, filtersToWhere } from "../index.js";
 import { zod } from "../zod.js";
 
@@ -12,7 +12,9 @@ const usersTable = pgTable("users", {
 	email: text("email"),
 });
 
-const db = drizzle({
+const client = postgres();
+
+const db = drizzle(client, {
 	schema: {
 		users: usersTable,
 	},
