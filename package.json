@@ -1,6 +1,6 @@
 {
 	"name": "viliha-drizzle-crud",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "A reusable base repository/service package for NestJS and Drizzle ORM.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -49,6 +49,7 @@
 		"vitest": "^3.2.4"
 	},
 	"dependencies": {
-		"class-validator": "^0.14.2"
+		"class-validator": "^0.14.2",
+		"postgres": "^3.4.7"
 	}
 }
