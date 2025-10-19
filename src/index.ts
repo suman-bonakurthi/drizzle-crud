@@ -1,0 +1,37 @@
+import { crudFactory } from "./crud-factory";
+import type {
+	Actor,
+	CrudOptions,
+	DrizzleCrudOptions,
+	DrizzleDatabase,
+	DrizzleTableWithId,
+	ScopeFilters,
+	ValidationAdapter,
+} from "./types.ts";
+
+export { filtersToWhere } from "./filters";
+export type * from "./types.ts";
+
+export function drizzleCrud<TDatabase extends DrizzleDatabase>(
+	db: TDatabase,
+	options: DrizzleCrudOptions<TDatabase> = {},
+) {
+	return function createCrud<
+		T extends DrizzleTableWithId,
+		TActor extends Actor = Actor,
+		TScopeFilters extends ScopeFilters<T, TActor> = ScopeFilters<T, TActor>,
+	>(
+		table: T,
+		crudOptions: CrudOptions<TDatabase, T, TActor, TScopeFilters> = {},
+	) {
+		const validation = {
+			...options.validation,
+			...crudOptions.validation,
+		} as ValidationAdapter<T>;
+
+		return crudFactory(db, table, {
+			...options,
+			validation,
+		});
+	};
+}
