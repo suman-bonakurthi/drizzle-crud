@@ -7,8 +7,8 @@ import {
 } from "drizzle-orm";
 import { integer, pgTable, text } from "drizzle-orm/pg-core";
 import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
 import { assertType, describe, it } from "vitest";
-
 import type { FilterParams } from "../types.js";
 
 // Define test table and relations
@@ -36,7 +36,9 @@ const postsRelations = relations(posts, ({ one }) => ({
 	}),
 }));
 
-const db = drizzle({
+const client = postgres();
+
+const db = drizzle(client, {
 	schema: {
 		users,
 		posts,
